@@ -18,8 +18,8 @@ export class PostsController {
    * GET localhost:3000/posts/:userId
    */
   @Get('/:userId?')
-  public getPosts(@Param('userId') userId: string) {
-    return this.postsService.findAll(userId);
+  public getPosts() {
+    return this.postsService.findAll();
   }
 
   @ApiOperation({
@@ -32,7 +32,7 @@ export class PostsController {
   })
   @Post()
   public createPost(@Body() createPostDto: CreatePostDto) {
-    console.log(createPostDto);
+    return this.postsService.createPost(createPostDto);
   }
 
   @ApiOperation({

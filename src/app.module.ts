@@ -5,6 +5,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PostsModule } from './posts/posts.module';
 import { UsersModule } from './users/users.module';
+import { TagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -12,8 +13,10 @@ import { UsersModule } from './users/users.module';
     PostsModule,
     AuthModule,
     MongooseModule.forRoot(
-      'mongodb+srv://nestjs:4kRbli2h2k5F50tb@nestjs.dgq4bvd.mongodb.net/?retryWrites=true&w=majority&appName=nestjs',
+      'mongodb+srv://NivNaim:Niv271201@niv-test.tdwk8fe.mongodb.net/?retryWrites=true&w=majority&appName=niv-test',
+      { dbName: 'niv-test' },
     ),
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
